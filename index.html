@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Tech Game Portal</title>
+    <title>FIRE - Digital Tech Game Portal</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Optional: Google Font for a bold look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>My ICT Game Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="#game">Play Game</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
+        <h1 class="logo">🔥 FIRE</h1>
+        <p class="tagline">Digital Tech Game Portal</p>
     </header>
 
     <main>
-        <section id="game" class="game-container">
-            <h2>Snake Game</h2>
-            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <!-- Game Selection Tabs -->
+        <nav class="game-tabs">
+            <button class="tab active" onclick="showGame('snake')">Snake</button>
+            <button class="tab" onclick="showGame('breakout')">Breakout</button>
+        </nav>
+
+        <!-- Snake Game Container -->
+        <section id="snake-game" class="game-container active">
+            <div class="game-wrapper">
+                <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            </div>
             <div class="controls">
-                <button id="startBtn">Start Game</button>
-                <p>Score: <span id="score">0</span></p>
-                <p>Use Arrow Keys to Move</p>
+                <p>Score: <span id="snake-score">0</span></p>
+                <p>High Score: <span id="snake-high-score">0</span></p>
+                <button id="snake-start-btn" class="fire-btn">Start Game</button>
+                <p class="instructions">Use Arrow Keys to Move</p>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <h2>About This Project</h2>
-            <p>This website was built as a Digital Technology assignment. 
-               It features a Snake game implemented using HTML5 Canvas and vanilla JavaScript.
-               No external frameworks were used.</p>
-            <h3>Technologies Used:</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Vanilla JavaScript (ES6)</li>
-            </ul>
+        <!-- Breakout Game Container -->
+        <section id="breakout-game" class="game-container">
+            <div class="game-wrapper">
+                <canvas id="breakoutCanvas" width="400" height="400"></canvas>
+            </div>
+            <div class="controls">
+                <p>Score: <span id="breakout-score">0</span></p>
+                <p>Lives: <span id="breakout-lives">3</span></p>
+                <button id="breakout-start-btn" class="fire-btn">Start Game</button>
+                <p class="instructions">Move Mouse/Touch to control Paddle</p>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 Digital Tech Project</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 FIRE Portal. Built for Digital Technology. All games are open-source or public domain.</p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
